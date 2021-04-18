@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const employeeCards = document.getElementById('employeeCards');
 
-function cardCreation(){
+function managerCardCreation(){
     inquirer.prompt([
         {
             type: 'input',
@@ -25,6 +25,6 @@ function cardCreation(){
         }
     ])
     .then((response) => {
-
+        console.log(response);
     })
 }
