@@ -18,7 +18,7 @@ class Intern {
                         Email: ${this.email}
                     </p>
                     <p class='schoolName'>
-                        School: ${this.officeNum}
+                        School: ${this.school}
                     </p>
                 </div>
             </div>`

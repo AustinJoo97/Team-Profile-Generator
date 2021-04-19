@@ -126,7 +126,8 @@ function nextMember(){
         <title>Team Profile Generator</title>
     </header>
     <body>
-        <div id='employeeCards'>${superString}</div>
+        <div id='employeeCards'>${superString}
+        </div>
     </body>
 </html>`
             fs.writeFile('teamMembers.html', htmlTemplate, (err) => {
