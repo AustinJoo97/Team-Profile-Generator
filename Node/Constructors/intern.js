@@ -8,12 +8,12 @@ class Intern {
 
     createCard(){
         return `
-            <div id=${this.id}>
+            <div class='employeeCard' id=${this.id}>
                 <div class='cardHead'>
                     <h1>${this.name}</h1>
                     <h2>Intern</h2>
                 </div>
-                <div class='MemberInfo'>
+                <div class='memberInfo'>
                     <p class='email'>
                         Email: ${this.email}
                     </p>

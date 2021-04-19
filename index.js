@@ -124,8 +124,11 @@ function nextMember(){
     <header>
         <meta charset="utf-8">
         <title>Team Profile Generator</title>
+        <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
+        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
     </header>
     <body>
+        <nav id='navBar'>My Team</nav>
         <div id='employeeCards'>${superString}
         </div>
     </body>
