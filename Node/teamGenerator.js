@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./Constructors/manager');
 const Engineer = require('./Constructors/engineer');
 const Intern = require('./Constructors/intern');
+let fullTeamList = [];
 // const employeeCards = document.getElementById('employeeCards');
 
 function managerCardCreation(){
@@ -29,6 +30,7 @@ function managerCardCreation(){
     ])
     .then((managerInfo) => {
         let manager = new Manager(managerInfo.managerName, managerInfo.managerID, managerInfo.managerEmail, managerInfo.managerOfficeNumber);
+        fullTeamList.push(manager);
         console.log(manager);
         // Create manager card
         // Run inquirer to ask what type of employee next is
@@ -61,6 +63,7 @@ function engineerCardCreation(){
     ])
     .then((engineerInfo) => {
         let engineer = new Engineer(engineerInfo.engineerName, engineerInfo.engineerID, engineerInfo.engineerEmail, engineerInfo.engineerGitHub);
+        fullTeamList.push(engineer);
         console.log(engineer);
         nextMember();
     })
@@ -91,6 +94,7 @@ function internCardCreation(){
     ])
     .then((internInfo) => {
         let intern = new Intern(internInfo.internName, internInfo.internID, internInfo.internEmail, internInfo.internSchool);
+        fullTeamList.push(intern);
         console.log(intern);
         nextMember();
     })
@@ -118,3 +122,7 @@ function nextMember(){
 }
 
 managerCardCreation()
+
+module.exports = fullTeamList;
+
+// Export fullTeamList to some other fucntion that will be called when the html file loads. This should take the array and for each, create a team member card
