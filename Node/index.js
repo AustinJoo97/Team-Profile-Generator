@@ -1,9 +1,5 @@
 const inquirer = require('inquirer');
-const employeeCards = document.getElementById('employeeCards');
-
-function init(){
-    managerCardCreation();
-};
+// const employeeCards = document.getElementById('employeeCards');
 
 function managerCardCreation(){
     inquirer.prompt([
@@ -98,10 +94,11 @@ function internCardCreation(){
 function nextMember(){
     inquirer.prompt([
         {
-            type: 'select',
+            type: 'list',
             message: 'Would you like to add another member to your team?',
             name: 'nextMember',
-            choices: ['Engineer', 'Intern', 'Done Adding Memebers']
+            choices: ['Engineer', 'Intern', 'Done Adding Members'],
+            default: 'Done Adding Members'
         }
     ])
     .then((response) => {
@@ -114,3 +111,5 @@ function nextMember(){
         }
     })
 }
+
+managerCardCreation()
