@@ -14,6 +14,9 @@ class Manager {
                     <h2>Manager</h2>
                 </div>
                 <div class='memberInfo'>
+                    <p class='id>
+                        ID: ${this.id}
+                    <p>
                     <p class='email'>
                         Email: ${this.email}
                     </p>
