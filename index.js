@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
-const Manager = require('./Constructors/manager');
-const Engineer = require('./Constructors/engineer');
-const Intern = require('./Constructors/intern');
+const Manager = require('./Node/Constructors/manager');
+const Engineer = require('./Node/Constructors/engineer');
+const Intern = require('./Node/Constructors/intern');
+const fs = require('fs');
 let fullTeamList = [];
-// const employeeCards = document.getElementById('employeeCards');
 
 function managerCardCreation(){
     inquirer.prompt([
@@ -30,10 +30,8 @@ function managerCardCreation(){
     ])
     .then((managerInfo) => {
         let manager = new Manager(managerInfo.managerName, managerInfo.managerID, managerInfo.managerEmail, managerInfo.managerOfficeNumber);
+        manager = manager.createCard();
         fullTeamList.push(manager);
-        console.log(manager);
-        // Create manager card
-        // Run inquirer to ask what type of employee next is
         nextMember();
     })
 };
@@ -63,8 +61,8 @@ function engineerCardCreation(){
     ])
     .then((engineerInfo) => {
         let engineer = new Engineer(engineerInfo.engineerName, engineerInfo.engineerID, engineerInfo.engineerEmail, engineerInfo.engineerGitHub);
+        engineer = engineer.createCard()
         fullTeamList.push(engineer);
-        console.log(engineer);
         nextMember();
     })
 };
@@ -94,8 +92,8 @@ function internCardCreation(){
     ])
     .then((internInfo) => {
         let intern = new Intern(internInfo.internName, internInfo.internID, internInfo.internEmail, internInfo.internSchool);
+        intern = intern.createCard();
         fullTeamList.push(intern);
-        console.log(intern);
         nextMember();
     })
 };
@@ -116,13 +114,27 @@ function nextMember(){
         } else if(response.nextMember === 'Intern'){
             internCardCreation()
         } else {
+            let superString = '';
+            fullTeamList.forEach((member) => {
+                superString += (member + '\n');
+            })
+            let htmlTemplate = `
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+        <title>Team Profile Generator</title>
+    </header>
+    <body>
+        <div id='employeeCards'>${superString}</div>
+    </body>
+</html>`
+            fs.writeFile('teamMembers.html', htmlTemplate, (err) => {
+                err ? console.log(err) : console.log('Success!')
+            });
             return;
         }
     })
 }
 
 managerCardCreation()
-
-module.exports = fullTeamList;
-
-// Export fullTeamList to some other fucntion that will be called when the html file loads. This should take the array and for each, create a team member card
