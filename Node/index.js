@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+const Manager = require('./Constructors/manager');
+const Engineer = require('./Constructors/engineer');
+const Intern = require('./Constructors/intern');
 // const employeeCards = document.getElementById('employeeCards');
 
 function managerCardCreation(){
@@ -24,11 +27,11 @@ function managerCardCreation(){
             name: 'managerOfficeNumber'
         }
     ])
-    .then((response) => {
-        console.log(response);
+    .then((managerInfo) => {
+        let manager = new Manager(managerInfo.managerName, managerInfo.managerID, managerInfo.managerEmail, managerInfo.managerOfficeNumber);
+        console.log(manager);
         // Create manager card
         // Run inquirer to ask what type of employee next is
-        // Based on that answer, determine what nextMember must be set to in order to determine which function must be run
         nextMember();
     })
 };
@@ -56,8 +59,9 @@ function engineerCardCreation(){
             name: 'engineerGitHub'
         }
     ])
-    .then((response) => {
-        console.log(response);
+    .then((engineerInfo) => {
+        let engineer = new Engineer(engineerInfo.engineerName, engineerInfo.engineerID, engineerInfo.engineerEmail, engineerInfo.engineerGitHub);
+        console.log(engineer);
         nextMember();
     })
 };
@@ -85,8 +89,9 @@ function internCardCreation(){
             name: 'internSchool'
         }
     ])
-    .then((response) => {
-        console.log(response);
+    .then((internInfo) => {
+        let intern = new Intern(internInfo.internName, internInfo.internID, internInfo.internEmail, internInfo.internSchool);
+        console.log(intern);
         nextMember();
     })
 };
