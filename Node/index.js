@@ -6,7 +6,6 @@ function init(){
 };
 
 function managerCardCreation(){
-    let nextMember;
     inquirer.prompt([
         {
             type: 'input',
@@ -34,11 +33,11 @@ function managerCardCreation(){
         // Create manager card
         // Run inquirer to ask what type of employee next is
         // Based on that answer, determine what nextMember must be set to in order to determine which function must be run
+        nextMember();
     })
 };
 
 function engineerCardCreation(){
-    let nextMember;
     inquirer.prompt([
         {
             type: 'input',
@@ -63,11 +62,11 @@ function engineerCardCreation(){
     ])
     .then((response) => {
         console.log(response);
+        nextMember();
     })
 };
 
 function internCardCreation(){
-    let nextMember;
     inquirer.prompt([
         {
             type: 'input',
@@ -92,5 +91,26 @@ function internCardCreation(){
     ])
     .then((response) => {
         console.log(response);
+        nextMember();
     })
 };
+
+function nextMember(){
+    inquirer.prompt([
+        {
+            type: 'select',
+            message: 'Would you like to add another member to your team?',
+            name: 'nextMember',
+            choices: ['Engineer', 'Intern', 'Done Adding Memebers']
+        }
+    ])
+    .then((response) => {
+        if(response.nextMember === 'Engineer'){
+            engineerCardCreation()
+        } else if(response.nextMember === 'Intern'){
+            internCardCreation()
+        } else {
+            return;
+        }
+    })
+}
