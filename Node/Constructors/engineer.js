@@ -18,7 +18,7 @@ class Engineer {
                         ID: ${this.id}
                     <p>
                     <p class='email'>
-                        Email: ${this.email}
+                        Email: <a href="mailto:${this.email}">${this.email}</a>
                     </p>
                     <p class='gitHubProfile'>
                         GitHub Profile: <a href='https://github.com/${this.gitHub}' target='_blank'>${this.gitHub}</a>

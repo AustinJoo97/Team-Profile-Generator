@@ -18,7 +18,7 @@ class Manager {
                         ID: ${this.id}
                     <p>
                     <p class='email'>
-                        Email: ${this.email}
+                        Email: <a href="mailto:${this.email}">${this.email}</a>
                     </p>
                     <p class='officeNum'>
                         Office Number: ${this.officeNum}
