@@ -22,9 +22,9 @@ class Intern extends Employee{
                     <h2>${this.getRole()}</h2>
                 </div>
                 <div class='memberInfo'>
-                    <p class='id>
+                    <p class='id'>
                         ID: ${this.getID()}
-                    <p>
+                    </p>
                     <p class='email'>
                         Email: <a href="mailto:${this.getEmail()}">${this.getEmail()}</a>
                     </p>
