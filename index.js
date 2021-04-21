@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Manager = require('./Node/manager');
-const Engineer = require('./Node/engineer');
-const Intern = require('./Node/intern');
+const Manager = require('./node/manager');
+const Engineer = require('./node/engineer');
+const Intern = require('./node/intern');
 const fs = require('fs');
 let fullTeamList = [];
 

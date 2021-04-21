@@ -1,4 +1,4 @@
-const Intern = require('../Node/intern');
+const Intern = require('../node/intern');
 
 describe('arguments passed via super in Intern constructor', () => {
     it('should return new Intern name, id, and info', () => {

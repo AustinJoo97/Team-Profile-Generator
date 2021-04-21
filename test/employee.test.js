@@ -1,4 +1,4 @@
-const Employee = require('../Node/employee');
+const Employee = require('../node/employee');
 
 describe('getName() method', () => {
     it('should return a newly created employees name', () => {
