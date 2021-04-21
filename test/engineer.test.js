@@ -1,7 +1,7 @@
 const Engineer = require('../Node/engineer');
 
 describe('arguments passed via super in Engineer constructor', () => {
-    it('should return new Engineer id', () => {
+    it('should return new Engineer name, id, and email', () => {
         const newEngineer = new Engineer('Bob', '000', 'BobEngineer@gmail.com', 'bobtestgithub')
 
         expect(newEngineer.getName()).toEqual('Bob');

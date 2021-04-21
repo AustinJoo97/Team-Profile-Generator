@@ -1,7 +1,7 @@
 const Manager = require('../Node/manager');
 
 describe('arguments passed via super in Manager constructor', () => {
-    it('should return new Manager id', () => {
+    it('should return new Manager name, id, and email', () => {
         const newManager = new Manager('Bill', '000', 'billmanager@gmail.com', '01')
 
         expect(newManager.getName()).toEqual('Bill');
