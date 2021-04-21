@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Manager = require('./Node/Constructors/manager');
-const Engineer = require('./Node/Constructors/engineer');
-const Intern = require('./Node/Constructors/intern');
+const Manager = require('./Node/manager');
+const Engineer = require('./Node/engineer');
+const Intern = require('./Node/intern');
 const fs = require('fs');
 let fullTeamList = [];
 
@@ -124,8 +124,8 @@ function nextMember(){
     <header>
         <meta charset="utf-8">
         <title>Team Profile Generator</title>
-        <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css">
-        <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="./reset.css">
+        <link rel="stylesheet" type="text/css" href="./style.css">
     </header>
     <body>
         <nav id='navBar'>My Team</nav>
@@ -133,7 +133,7 @@ function nextMember(){
         </div>
     </body>
 </html>`
-            fs.writeFile('teamMembers.html', htmlTemplate, (err) => {
+            fs.writeFile('./dist/teamMembers.html', htmlTemplate, (err) => {
                 err ? console.log(err) : console.log('Success!')
             });
             return;
