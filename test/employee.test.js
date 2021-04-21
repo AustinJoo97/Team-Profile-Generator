@@ -1,4 +1,3 @@
-const { getMaxListeners } = require('process');
 const Employee = require('../Node/employee');
 
 describe('getName() method', () => {
