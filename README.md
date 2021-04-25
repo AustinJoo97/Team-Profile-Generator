@@ -19,9 +19,11 @@ N/a
 
 ## Description, Setup, and Installation
 
-This program was created to allow any user to create a simple card rendering displaying the basic information for their team of engineers. Utilizing the NPM inquirer command-line interface, users can utilized node to create and render a styled HTML with cards denoting the info for all team memebers, including their role, name, ID, email, and either a github handle for engineers or school for interns.
+This program was created to allow any user to create a simple card rendering displaying the basic information for their team of engineers. Utilizing the NPM inquirer command-line interface, users can utilized node to create and render a styled HTML with cards denoting the info for all team memebers, including their role, name, ID, email, and either a github handle for engineers or school for interns. Additionally, clicking on a member's email will compose an email to the clicked address in the user's default email application whereas clicking a github handle will redirect the user to the selected github page in a new tab.
 
 The application can be setup and installed using node via the "npm init" (to initialize node) and "npm install/i" (to install all dependencies) to acquire all the necessary components to successfully run the application. From here, the command "node index.js" from the main directory can be used to run the app and begin creating a team member page.
+
+To perform tests on the application using the devvelopment depenency "Jest," the "npm test" command can be used to run all test cases established.
 
 ## Usage
 As stated, this program serves as a method to create a well organized and easily manageable HTML file that contains all of the basic necessary information for a team's manager, engineers, and interns.
@@ -52,4 +54,4 @@ Please contact me with any questions, comments, or concerns regarding this repo 
 - Email: austinjoo1997@gmail.com
 
 ## Demonstration
-![NPM Demo](./Demo/demo.gif)
+![NPM Demo](./demo/Demo.gif)
